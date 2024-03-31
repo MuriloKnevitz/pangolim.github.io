@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+    <title>ADOTE UM PANGOLIM</title>
+    <head>
+        <meta charset="utf-8">
+
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: "Poppins", sans-serif;
+                background-image: url('img/pangolimformulario.jpg');
+                background-size: cover;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .cadastro {
+                margin-top: 250px;
+                display: flex;
+            }
+
+            .cadastro-button {
+                color: white;
+                background-color: transparent;
+                border: 3px solid white;
+                font-family: "Poppins", sans-serif;
+                font-size: 23px;
+                border-radius: 10px;
+                padding: 5px 10px 10px 10px;
+                transition: 50ms ease-in-out;
+                cursor: pointer;
+                outline: none;
+            }
+
+            .cadastro-button:hover{
+                font-size: 25px;
+            }
+
+            #container {
+                display: none;
+                background-color: white;
+                font-family: "Poppins", sans-serif;
+                border-radius: 10px;
+                margin-top: 69px;
+                padding: 30px 10px 30px 10px;
+            }
+
+            .formulario {
+                display: flex;
+                font-size: 20px;
+                padding-bottom: 50px;
+                width: 500px;
+                max-width: 500px;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .formulario-content {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+
+            .between {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            input {
+                border: none;
+                border-radius: 4px;
+                border: 1px solid black;
+                padding: 5px 10px 5px 10px;
+                margin-left: 22px;
+                transition: 75ms ease-in-out;
+                width: 260px;
+                margin-bottom: 5px;
+            }
+            
+            .required::after {
+                content: " *";
+                color: red ;
+            }
+
+            .input-submit {
+                border-radius: 4px;
+                background-color: #C6C6C6;
+                width: 70px;
+                padding-left: -30px;
+            }
+
+            .input-submit:hover {
+                background-color: #989998;
+            }
+
+            select {
+                border: none;
+                border-radius: 4px;
+                border: 1px solid black;
+                padding: 5px 10px 5px 10px;
+                margin-left: 22px;
+                transition: 75ms ease-in-out;
+                width: 260px;
+                margin-bottom: 5px;
+                text-align: center;
+            }
+
+
+        </style>
+
+        <script>
+            function show(){
+                document.getElementById("butao").style.display = "none";
+                document.getElementById("container").style.display = "block";
+            }
+        </script>
+    </head>
+    <body>
+        <div class="cadastro">
+            <button id="butao" onclick="show()" class="cadastro-button">Adote um pangolim</button>
+        </div>
+        <div id="container">
+            <div class="formulario">
+                <h3>Preencher Formulário</h3>
+            </div>
+            <div class="formulario-content">
+                <form>
+                    <div class="between">
+                        <label class="required">Nome Completo</label>
+                        <input name="nome" type="text" placeholder="Insira seu Nome" required />
+                    </div>
+                    <div class="between CPF">
+                        <label class="required">Cidade</label>
+                        <input name="CPF" type="text" placeholder="Insira seu CPF" maxlength="11" required />
+                    </div>
+                    <div class="between">
+                        <label class="required">Estado</label>
+                        <select required>
+                            <option selected="true" disabled="disabled">Selecione</option>
+                            <option value="ac">Acre</option>
+                            <option value="al">Alagoas</option>
+                            <option value="ap">Amapá</option>
+                            <option value="am">Amazonas</option>
+                            <option value="ba">Bahia</option>
+                            <option value="ce">Ceará</option>
+                            <option value="df">Distrito Federal</option>
+                            <option value="es">Espírito Santo</option>
+                            <option value="go">Goiás</option>
+                            <option value="ma">Maranhão</option>
+                            <option value="mt">Mato Grosso</option>
+                            <option value="ms">Mato Grosso do Sul</option>
+                            <option value="mg">Minas Gerais</option>
+                            <option value="pa">Pará</option>
+                            <option value="pb">Paraíba</option>
+                            <option value="pr">Paraná</option>
+                            <option value="pe">Pernambuco</option>
+                            <option value="pi">Piauí</option>
+                            <option value="rj">Rio de Janeiro</option>
+                            <option value="rn">Rio Grande do Norte</option>
+                            <option value="rs">Rio Grande do Sul</option>
+                            <option value="ro">Rondônia</option>
+                            <option value="rr">Roraima</option>
+                            <option value="sc">Santa Catarina</option>
+                            <option value="sp">São Paulo</option>
+                            <option value="se">Sergipe</option>
+                            <option value="to">Tocantins</option>
+                        </select>
+                    </div>
+                    <div class="between">
+                        <label class="required">Cidade</label>
+                        <input name="cidade" type="text" placeholder="Insira sua Cidade" maxlength="30" required />
+                    </div>
+                    <div class="between telefone">
+                         <label class="required">Telefone</label>
+                         <input name="telefone" type="tel" placeholder="24 91238-2395" pattern="[0-9]{2} [0-9]{5}-[0-9]{4}" title="74-34950-4059" minlength="13" maxlength="13" required />
+                    </div>
+                    
+                    <div class="between">
+                        <label class="required">E-mail</label>
+                        <input type="email" placeholder="exemplo@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required />
+                    </div>
+
+                    <br>
+                    <div>
+                    <input class="input-submit" type="submit" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
